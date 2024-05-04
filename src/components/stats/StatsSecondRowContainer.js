@@ -10,16 +10,8 @@ function StatsSecondRowContainer() {
         <div className="card-body">
           <Container>
             <Row>
-              <div className="card">
-                <div className="card-body">
-                  <Container>
-                    <Row>
-                      <Col>speed/weapons</Col>
-                      <Col>skills</Col>
-                    </Row>
-                  </Container>
-                </div>
-              </div>
+              <Col>speed/weapons</Col>
+              <Col>skills</Col>
             </Row>
           </Container>
         </div>

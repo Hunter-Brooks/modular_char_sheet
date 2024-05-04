@@ -1,6 +1,5 @@
 import "./App.css";
 import React, { useState } from "react";
-import logo from "./logo.svg";
 import HeadingContainer from "./components/HeadingContainer";
 import StatsFirstRowContainer from "./components/stats/StatsFirstRowContainer";
 import StatsSecondRowContainer from "./components/stats/StatsSecondRowContainer";
