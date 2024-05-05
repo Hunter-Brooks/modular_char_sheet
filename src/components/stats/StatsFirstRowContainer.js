@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import AbilityScoresClassDC from "./AbilityScoresClassDC";
 import ACSaves from "./ACSaves";
+import HPPerception from "./HPPerception";
 
 function StatsFirstRowContainer() {
   return (
@@ -18,7 +19,9 @@ function StatsFirstRowContainer() {
               <Col>
                 <ACSaves></ACSaves>
               </Col>
-              <Col>hp/perception component</Col>
+              <Col>
+                <HPPerception></HPPerception>
+              </Col>
             </Row>
           </Container>
         </div>
