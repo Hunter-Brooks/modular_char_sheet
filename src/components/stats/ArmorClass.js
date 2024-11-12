@@ -2,8 +2,9 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import ProfRadios from "../ProfRadios";
 
-function ACSaves() {
+function ArmorClass() {
   return (
     <div>
       <div className="card">
@@ -25,8 +26,10 @@ function ACSaves() {
                   <label className="form-control">Prof</label>
                   <input type="text" className="form-control"></input>
                 </Col>
-                <Col>Prof Radios</Col>
                 <Col>
+                  <ProfRadios></ProfRadios>
+                </Col>
+                <Col xs={3}>
                   <label className="form-control">Item</label>
                   <input type="text" className="form-control"></input>
                 </Col>
@@ -45,7 +48,6 @@ function ACSaves() {
                   <Col>heavy radios</Col>
                 </Row>
               </Row>
-              <Row>saving throws component</Row>
             </Col>
           </Container>
         </div>
@@ -54,4 +56,4 @@ function ACSaves() {
   );
 }
 
-export default ACSaves;
+export default ArmorClass;
