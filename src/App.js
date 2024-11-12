@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
 import HeadingContainer from "./components/HeadingContainer";
+import SpellsContainer from "./components/spells/SpellsContainer";
 import StatsFirstRowContainer from "./components/stats/StatsFirstRowContainer";
 import StatsSecondRowContainer from "./components/stats/StatsSecondRowContainer";
 import FeatsContainer from "./components/feats/FeatsContainer";
@@ -24,18 +25,18 @@ function App() {
               onSelect={(k) => setKey(k)}
               className="mb-3"
             >
-              <Tab eventKey="home" title="stats">
+              <Tab eventKey="stats" title="stats">
                 <StatsFirstRowContainer></StatsFirstRowContainer>
                 <StatsSecondRowContainer></StatsSecondRowContainer>
               </Tab>
-              <Tab eventKey="profile" title="feats">
+              <Tab eventKey="feats" title="feats">
                 <FeatsContainer></FeatsContainer>
               </Tab>
-              <Tab eventKey="contact" title="spells">
-                Tab content for Contact
+              <Tab eventKey="spells" title="spells">
+                <SpellsContainer></SpellsContainer>
               </Tab>
-              <Tab eventKey="contact" title="notes">
-                Tab content for Contact
+              <Tab eventKey="notes" title="notes">
+                NOTES
               </Tab>
             </Tabs>
           </div>

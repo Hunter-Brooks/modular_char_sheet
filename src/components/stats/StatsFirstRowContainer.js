@@ -2,9 +2,12 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import AbilityScoresClassDC from "./AbilityScoresClassDC";
-import ACSaves from "./ACSaves";
-import HPPerception from "./HPPerception";
+import AbilityScores from "./AbilityScores";
+import ClassDC from "./ClassDC";
+import ArmorClass from "./ArmorClass";
+import HitPoints from "./HitPoints";
+import Perception from "./Perception";
+import SavingThrows from "./SavingThrows";
 
 function StatsFirstRowContainer() {
   return (
@@ -14,13 +17,16 @@ function StatsFirstRowContainer() {
           <Container>
             <Row>
               <Col>
-                <AbilityScoresClassDC></AbilityScoresClassDC>
+                <AbilityScores></AbilityScores>
+                <ClassDC></ClassDC>
               </Col>
               <Col>
-                <ACSaves></ACSaves>
+                <ArmorClass></ArmorClass>
+                <SavingThrows></SavingThrows>
               </Col>
               <Col>
-                <HPPerception></HPPerception>
+                <HitPoints></HitPoints>
+                <Perception></Perception>
               </Col>
             </Row>
           </Container>
