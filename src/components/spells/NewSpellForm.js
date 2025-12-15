@@ -5,8 +5,6 @@ function NewSpellForm(props) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
 
-  console.log(level, name, description);
-
   const submitSpell = () => {
     if (level !== "" && name !== "" && description !== "") {
       props.addSpell(level, name, description);
