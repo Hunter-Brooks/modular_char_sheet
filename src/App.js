@@ -7,36 +7,46 @@ import StatsSecondRowContainer from "./components/stats/StatsSecondRowContainer"
 import FeatsContainer from "./components/feats/FeatsContainer";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
-import "./App.css";
 
 function App() {
-  const [key, setKey] = useState("home");
+  const [key, setKey] = useState("stats");
 
   return (
-    <div className="App">
-      <div className="mt-5 container">
-        <div className="card">
-          <div className="card-header">CHARACTER SHEET</div>
-          <div className="card-body">
-            <HeadingContainer></HeadingContainer>
+    <div className="App app-shell">
+      <div className="container app-container">
+        <div className="card app-card shadow-sm">
+          <div className="card-header app-card-header">Character Sheet</div>
+          <div className="card-body app-card-body">
+            <HeadingContainer />
             <Tabs
               id="controlled-tab-example"
               activeKey={key}
               onSelect={(k) => setKey(k)}
-              className="mb-3"
+              className="sheet-tabs"
             >
-              <Tab eventKey="stats" title="stats">
-                <StatsFirstRowContainer></StatsFirstRowContainer>
-                <StatsSecondRowContainer></StatsSecondRowContainer>
+              <Tab eventKey="stats" title="Stats">
+                <StatsFirstRowContainer />
+                <StatsSecondRowContainer />
               </Tab>
-              <Tab eventKey="feats" title="feats">
-                <FeatsContainer></FeatsContainer>
+              <Tab eventKey="feats" title="Feats">
+                <FeatsContainer />
               </Tab>
-              <Tab eventKey="spells" title="spells">
-                <SpellsContainer></SpellsContainer>
+              <Tab eventKey="spells" title="Spells">
+                <SpellsContainer />
               </Tab>
-              <Tab eventKey="notes" title="notes">
-                NOTES
+              <Tab eventKey="notes" title="Notes">
+                <div className="card section-card mt-3">
+                  <div className="card-body">
+                    <div className="field-group mb-0">
+                      <label className="field-label">Notes</label>
+                      <textarea
+                        className="form-control sheet-input"
+                        rows={12}
+                        placeholder="Write notes here..."
+                      />
+                    </div>
+                  </div>
+                </div>
               </Tab>
             </Tabs>
           </div>

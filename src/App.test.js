@@ -1,8 +1,9 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+test("renders character sheet with tabs", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByText(/character sheet/i)).toBeInTheDocument();
+  expect(screen.getByRole("tab", { name: /stats/i })).toBeInTheDocument();
+  expect(screen.getByRole("tab", { name: /spells/i })).toBeInTheDocument();
 });

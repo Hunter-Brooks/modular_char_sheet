@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ProfRadios from "../ProfRadios";
+import { formatSigned, getProficiencyBonus } from "../../utils/pf2eMath";
 
 // function ClassDC() {
 //   return (
@@ -41,49 +42,83 @@ import ProfRadios from "../ProfRadios";
 //   );
 // }
 
-function ClassDC() {
-  const [DC, setDC] = useState("10");
+function ClassDC({ level, abilityModifiers }) {
   const [prof, setProf] = useState("");
+  const [keyAbility, setKeyAbility] = useState("intellect");
+  const [itemBonus, setItemBonus] = useState(0);
+
+  const proficiencyBonus = getProficiencyBonus(prof, level);
+  const keyModifier = abilityModifiers[keyAbility] ?? 0;
+  const classDc = 10 + keyModifier + proficiencyBonus + Number(itemBonus || 0);
+
+  const keyAbilityOptions = [
+    { label: "Strength", value: "strength" },
+    { label: "Dexterity", value: "dexterity" },
+    { label: "Constitution", value: "constitution" },
+    { label: "Intellect", value: "intellect" },
+    { label: "Wisdom", value: "wisdom" },
+    { label: "Charisma", value: "charisma" },
+  ];
 
   return (
-    <div className="card">
+    <div className="card section-card">
       <div className="card-body">
         <Container>
-          {/* Title Row */}
-          <Row className="mb-3">
+          <Row className="section-title">
             <Col>
-              <h5>Class DC</h5>
+              <div>Class DC</div>
             </Col>
           </Row>
 
-          {/* Inputs Row */}
-          <Row className="align-items-center">
-            {/* DC / ProfRadios */}
-            <Col xs={3}>
-              <Row className="align-items-center">
-                <label className="form-label">DC</label>
-              </Row>
-              <Row className="align-items-center">
-                <label className="form-label">{DC}</label>
-              </Row>
+          <Row className="align-items-end g-2">
+            <Col xs={12} md={4}>
+              <div className="field-group mb-0">
+                <label className="field-label">DC</label>
+                <div className="form-control stat-mod">{classDc}</div>
+              </div>
             </Col>
-
-            {/* Key */}
-            <Col xs={3} className="d-flex flex-column">
-              <label className="form-label">Key</label>
-              <input type="text" className="form-control" />
+            <Col xs={12} md={4}>
+              <div className="field-group mb-0">
+                <label className="field-label">Key Mod</label>
+                <select
+                  className="form-select sheet-input"
+                  value={keyAbility}
+                  onChange={(event) => setKeyAbility(event.target.value)}
+                >
+                  {keyAbilityOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label} (
+                      {formatSigned(abilityModifiers[option.value] ?? 0)})
+                    </option>
+                  ))}
+                </select>
+              </div>
             </Col>
-
-            {/* Prof */}
-            <Col xs={3} className="d-flex flex-column">
-              <label className="form-label">Prof</label>
-              <ProfRadios value={prof} onChange={setProf} />
+            <Col xs={12} md={4}>
+              <div className="field-group mb-0">
+                <label className="field-label">ITEM/OTHER</label>
+                <input
+                  type="number"
+                  className="form-control sheet-input"
+                  value={itemBonus}
+                  onChange={(event) =>
+                    setItemBonus(Number(event.target.value || 0))
+                  }
+                />
+              </div>
             </Col>
+          </Row>
 
-            {/* Item */}
-            <Col xs={3} className="d-flex flex-column">
-              <label className="form-label">Item</label>
-              <input type="text" className="form-control" />
+          <Row className="mt-2">
+            <Col xs={12}>
+              <div className="field-group mb-0">
+                <label className="field-label">Proficiency</label>
+                <ProfRadios
+                  value={prof}
+                  onChange={setProf}
+                  name="classdc-prof"
+                />
+              </div>
             </Col>
           </Row>
         </Container>

@@ -6,9 +6,12 @@ import Col from "react-bootstrap/Col";
 function StatsSecondRowContainer() {
   return (
     <div>
-      <div className="card">
+      <div className="card section-card">
         <div className="card-body">
           <Container>
+            <Row className="section-title">
+              <Col>Combat & Skills</Col>
+            </Row>
             <Row>
               <Col>speed/weapons</Col>
               <Col>skills</Col>

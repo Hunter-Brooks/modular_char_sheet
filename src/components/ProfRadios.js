@@ -55,10 +55,26 @@
 //   );
 // }
 
-import { useState } from "react";
-import React from "react";
+import React, { useId, useState } from "react";
 
-function ProfRadios({ value, onChange }) {
+function ProfRadios({ value, onChange, name }) {
+  const generatedName = useId();
+  const groupName = name || generatedName;
+  const [internalValue, setInternalValue] = useState("");
+
+  const isControlled = value !== undefined;
+  const selectedValue = isControlled ? value : internalValue;
+
+  const handleChange = (nextValue) => {
+    if (isControlled) {
+      onChange?.(nextValue);
+      return;
+    }
+
+    setInternalValue(nextValue);
+    onChange?.(nextValue);
+  };
+
   const options = [
     { label: "T", val: "T" },
     { label: "E", val: "E" },
@@ -67,22 +83,26 @@ function ProfRadios({ value, onChange }) {
   ];
 
   return (
-    <div className="btn-group btn-group-sm" role="group" aria-label="Prof">
+    <div
+      className="btn-group btn-group-sm prof-radios"
+      role="group"
+      aria-label="Prof"
+    >
       {options.map((opt, idx) => (
         <React.Fragment key={opt.val}>
           <input
             type="radio"
             className="btn-check"
-            name="profRadios"
-            id={`profRadio${idx}`}
+            name={groupName}
+            id={`${groupName}-${idx}`}
             autoComplete="off"
             value={opt.val}
-            checked={value === opt.val}
-            onChange={() => onChange(opt.val)}
+            checked={selectedValue === opt.val}
+            onChange={() => handleChange(opt.val)}
           />
           <label
             className="btn btn-outline-primary"
-            htmlFor={`profRadio${idx}`}
+            htmlFor={`${groupName}-${idx}`}
           >
             {opt.label}
           </label>
