@@ -11,6 +11,10 @@
 # production
 /build
 
+# BMAD
+/_bmad
+/_bmad-output
+
 # misc
 .DS_Store
 .env.local
