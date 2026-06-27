@@ -1,6 +1,6 @@
-function Spell(props) {
+function Feat(props) {
   return (
-    <tr onClick={() => props.deleteSpell(props.rowNumber)}>
+    <tr onClick={() => props.deleteFeat(props.rowNumber)}>
       <td>{props.rowLevel}</td>
       <td>{props.rowName}</td>
       <td>{props.rowDescription}</td>
@@ -8,4 +8,4 @@ function Spell(props) {
   );
 }
 
-export default Spell;
+export default Feat;

@@ -5,7 +5,6 @@ function SpellTable(props) {
     <table className="table table-hover">
       <thead>
         <tr>
-          <th scope="col">#</th>
           <th scope="col">Level</th>
           <th scope="col">Name</th>
           <th scope="col">Description</th>
