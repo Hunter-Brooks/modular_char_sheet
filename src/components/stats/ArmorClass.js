@@ -34,7 +34,9 @@ function ArmorClass({ level, dexterityModifier }) {
                 <Col xs={12} md={4}>
                   <div className="field-group mb-0">
                     <label className="field-label">Dex</label>
-                    <div className="form-control stat-mod">{dexterityModifier ?? 0}</div>
+                    <div className="form-control stat-mod">
+                      {dexterityModifier ?? 0}
+                    </div>
                   </div>
                 </Col>
                 <Col xs={12} md={4}>
@@ -44,7 +46,9 @@ function ArmorClass({ level, dexterityModifier }) {
                       type="number"
                       className="form-control sheet-input"
                       value={itemBonus}
-                      onChange={(event) => setItemBonus(Number(event.target.value || 0))}
+                      onChange={(event) =>
+                        setItemBonus(Number(event.target.value || 0))
+                      }
                     ></input>
                   </div>
                 </Col>
@@ -65,7 +69,11 @@ function ArmorClass({ level, dexterityModifier }) {
               <Row className="g-2 mt-1">
                 <Col xs={12}>
                   <label className="field-label">Proficiency Rank</label>
-                  <ProfRadios value={profRank} onChange={setProfRank} name="ac-prof" />
+                  <ProfRadios
+                    value={profRank}
+                    onChange={setProfRank}
+                    name="ac-prof"
+                  />
                 </Col>
               </Row>
             </Col>

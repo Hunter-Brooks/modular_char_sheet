@@ -83,7 +83,11 @@ function ProfRadios({ value, onChange, name }) {
   ];
 
   return (
-    <div className="btn-group btn-group-sm prof-radios" role="group" aria-label="Prof">
+    <div
+      className="btn-group btn-group-sm prof-radios"
+      role="group"
+      aria-label="Prof"
+    >
       {options.map((opt, idx) => (
         <React.Fragment key={opt.val}>
           <input

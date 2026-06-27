@@ -14,36 +14,57 @@ function HitPoints() {
               <Row xs={3}>
                 <div className="p-1">
                   <label className="field-label">HP Max</label>
-                  <input type="text" className="form-control sheet-input"></input>
+                  <input
+                    type="text"
+                    className="form-control sheet-input"
+                  ></input>
                 </div>
                 <div className="p-1">
                   <label className="field-label">Current</label>
-                  <input type="text" className="form-control sheet-input"></input>
+                  <input
+                    type="text"
+                    className="form-control sheet-input"
+                  ></input>
                 </div>
                 <div className="p-1">
                   <label className="field-label">HP Temp</label>
-                  <input type="text" className="form-control sheet-input"></input>
+                  <input
+                    type="text"
+                    className="form-control sheet-input"
+                  ></input>
                 </div>
               </Row>
               <Row>
                 <Col>
                   <div className="p-1">
                     <label className="field-label">Dying</label>
-                    <input type="text" className="form-control sheet-input"></input>
+                    <input
+                      type="text"
+                      className="form-control sheet-input"
+                    ></input>
                   </div>
                   <div className="p-1">
                     <label className="field-label">Wounded</label>
-                    <input type="text" className="form-control sheet-input"></input>
+                    <input
+                      type="text"
+                      className="form-control sheet-input"
+                    ></input>
                   </div>
                 </Col>
                 <Col>
                   <div className="p-1">
                     <label className="field-label">Resistances</label>
-                    <input type="text" className="form-control sheet-input"></input>
+                    <input
+                      type="text"
+                      className="form-control sheet-input"
+                    ></input>
                   </div>
                   <div className="p-1">
                     <label className="field-label">Conditions</label>
-                    <input type="text" className="form-control sheet-input"></input>
+                    <input
+                      type="text"
+                      className="form-control sheet-input"
+                    ></input>
                   </div>
                 </Col>
               </Row>

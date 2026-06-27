@@ -12,7 +12,8 @@ function Perception({ level, wisdomModifier }) {
   const [senses, setSenses] = useState("");
 
   const proficiencyBonus = getProficiencyBonus(prof, level);
-  const perceptionTotal = wisdomModifier + proficiencyBonus + Number(itemBonus || 0);
+  const perceptionTotal =
+    wisdomModifier + proficiencyBonus + Number(itemBonus || 0);
 
   return (
     <div className="card section-card">
@@ -45,7 +46,9 @@ function Perception({ level, wisdomModifier }) {
                   type="number"
                   className="form-control sheet-input"
                   value={itemBonus}
-                  onChange={(event) => setItemBonus(Number(event.target.value || 0))}
+                  onChange={(event) =>
+                    setItemBonus(Number(event.target.value || 0))
+                  }
                 />
               </div>
             </Col>

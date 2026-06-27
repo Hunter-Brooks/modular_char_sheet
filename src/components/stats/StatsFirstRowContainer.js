@@ -30,7 +30,7 @@ function StatsFirstRowContainer() {
       wisdom: getAbilityModifier(abilities.wisdom),
       charisma: getAbilityModifier(abilities.charisma),
     }),
-    [abilities]
+    [abilities],
   );
 
   const handleAbilityChange = (abilityName, abilityScore) => {
@@ -54,7 +54,9 @@ function StatsFirstRowContainer() {
                     min={1}
                     className="form-control sheet-input"
                     value={level}
-                    onChange={(event) => setLevel(Number(event.target.value || 1))}
+                    onChange={(event) =>
+                      setLevel(Number(event.target.value || 1))
+                    }
                   />
                 </div>
               </Col>
@@ -69,12 +71,21 @@ function StatsFirstRowContainer() {
                 <ClassDC level={level} abilityModifiers={abilityModifiers} />
               </Col>
               <Col>
-                <ArmorClass level={level} dexterityModifier={abilityModifiers.dexterity} />
-                <SavingThrows level={level} abilityModifiers={abilityModifiers} />
+                <ArmorClass
+                  level={level}
+                  dexterityModifier={abilityModifiers.dexterity}
+                />
+                <SavingThrows
+                  level={level}
+                  abilityModifiers={abilityModifiers}
+                />
               </Col>
               <Col>
                 <HitPoints />
-                <Perception level={level} wisdomModifier={abilityModifiers.wisdom} />
+                <Perception
+                  level={level}
+                  wisdomModifier={abilityModifiers.wisdom}
+                />
               </Col>
             </Row>
           </Container>

@@ -83,7 +83,9 @@ function SavingThrows({ level, abilityModifiers }) {
                       </div>
 
                       <div className="field-group mb-2">
-                        <label className="field-label">{throwCard.abilityLabel}</label>
+                        <label className="field-label">
+                          {throwCard.abilityLabel}
+                        </label>
                         <div className="form-control stat-mod">
                           {formatSigned(throwCard.abilityModifier)}
                         </div>

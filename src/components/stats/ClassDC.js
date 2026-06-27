@@ -87,7 +87,8 @@ function ClassDC({ level, abilityModifiers }) {
                 >
                   {keyAbilityOptions.map((option) => (
                     <option key={option.value} value={option.value}>
-                      {option.label} ({formatSigned(abilityModifiers[option.value] ?? 0)})
+                      {option.label} (
+                      {formatSigned(abilityModifiers[option.value] ?? 0)})
                     </option>
                   ))}
                 </select>
@@ -100,7 +101,9 @@ function ClassDC({ level, abilityModifiers }) {
                   type="number"
                   className="form-control sheet-input"
                   value={itemBonus}
-                  onChange={(event) => setItemBonus(Number(event.target.value || 0))}
+                  onChange={(event) =>
+                    setItemBonus(Number(event.target.value || 0))
+                  }
                 />
               </div>
             </Col>
@@ -110,11 +113,14 @@ function ClassDC({ level, abilityModifiers }) {
             <Col xs={12}>
               <div className="field-group mb-0">
                 <label className="field-label">Proficiency</label>
-                <ProfRadios value={prof} onChange={setProf} name="classdc-prof" />
+                <ProfRadios
+                  value={prof}
+                  onChange={setProf}
+                  name="classdc-prof"
+                />
               </div>
             </Col>
           </Row>
-
         </Container>
       </div>
     </div>

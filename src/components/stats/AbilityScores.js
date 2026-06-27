@@ -48,7 +48,10 @@ function AbilityScores({ abilities, abilityModifiers, onAbilityChange }) {
                           className="form-control sheet-input"
                           value={abilities[ability.key]}
                           onChange={(event) =>
-                            onAbilityChange(ability.key, Number(event.target.value || 0))
+                            onAbilityChange(
+                              ability.key,
+                              Number(event.target.value || 0),
+                            )
                           }
                         />
                       </div>

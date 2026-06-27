@@ -33,7 +33,8 @@ function SpellsContainer() {
   ]);
 
   const addSpell = (level, name, description) => {
-    const rowNumber = spells.length > 0 ? spells[spells.length - 1].rowNumber + 1 : 1;
+    const rowNumber =
+      spells.length > 0 ? spells[spells.length - 1].rowNumber + 1 : 1;
 
     const newSpell = {
       rowNumber,

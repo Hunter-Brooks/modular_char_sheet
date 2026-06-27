@@ -24,10 +24,7 @@ function HeadingContainer() {
               <Col>
                 <div className="field-group">
                   <label className="field-label">player name</label>
-                  <input
-                    type="text"
-                    className="form-control sheet-input"
-                  />
+                  <input type="text" className="form-control sheet-input" />
                 </div>
               </Col>
               <Col />
@@ -37,28 +34,19 @@ function HeadingContainer() {
               <Col>
                 <div className="field-group">
                   <label className="field-label">ancestry/heritage</label>
-                  <input
-                    type="text"
-                    className="form-control sheet-input"
-                  />
+                  <input type="text" className="form-control sheet-input" />
                 </div>
               </Col>
               <Col>
                 <div className="field-group">
                   <label className="field-label">background</label>
-                  <input
-                    type="text"
-                    className="form-control sheet-input"
-                  />
+                  <input type="text" className="form-control sheet-input" />
                 </div>
               </Col>
               <Col>
                 <div className="field-group">
                   <label className="field-label">hero points</label>
-                  <input
-                    type="text"
-                    className="form-control sheet-input"
-                  />
+                  <input type="text" className="form-control sheet-input" />
                 </div>
               </Col>
             </Row>
@@ -67,19 +55,13 @@ function HeadingContainer() {
               <Col>
                 <div className="field-group">
                   <label className="field-label">EXP</label>
-                  <input
-                    type="text"
-                    className="form-control sheet-input"
-                  />
+                  <input type="text" className="form-control sheet-input" />
                 </div>
               </Col>
               <Col>
                 <div className="field-group">
                   <label className="field-label">class</label>
-                  <input
-                    type="text"
-                    className="form-control sheet-input"
-                  />
+                  <input type="text" className="form-control sheet-input" />
                 </div>
               </Col>
               <Col>
@@ -87,28 +69,19 @@ function HeadingContainer() {
                   <Col>
                     <div className="field-group">
                       <label className="field-label">size</label>
-                      <input
-                        type="text"
-                        className="form-control sheet-input"
-                      />
+                      <input type="text" className="form-control sheet-input" />
                     </div>
                   </Col>
                   <Col>
                     <div className="field-group">
                       <label className="field-label">alignment</label>
-                      <input
-                        type="text"
-                        className="form-control sheet-input"
-                      />
+                      <input type="text" className="form-control sheet-input" />
                     </div>
                   </Col>
                   <Col>
                     <div className="field-group">
                       <label className="field-label">traits</label>
-                      <input
-                        type="text"
-                        className="form-control sheet-input"
-                      />
+                      <input type="text" className="form-control sheet-input" />
                     </div>
                   </Col>
                 </Row>
