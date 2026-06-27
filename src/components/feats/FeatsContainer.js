@@ -7,9 +7,12 @@ import Stack from "react-bootstrap/Stack";
 function FeatsContainer() {
   return (
     <div>
-      <div className="card">
+      <div className="card section-card">
         <div className="card-body">
           <Container>
+            <Row className="section-title">
+              <Col>Feats</Col>
+            </Row>
             <Row>
               <Col>
                 <Stack gap={0}>

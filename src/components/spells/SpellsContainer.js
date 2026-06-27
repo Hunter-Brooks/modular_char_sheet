@@ -33,21 +33,16 @@ function SpellsContainer() {
   ]);
 
   const addSpell = (level, name, description) => {
-    let rowNumber = 0;
-    if (spells.length > 0) {
-      rowNumber = spells[spells.length - 1].rowNumber + 1;
-    } else {
-      rowNumber = 1;
-    }
-    if (spells.length > 0) {
-      const newSpell = {
-        rowNumber: rowNumber,
-        rowlevel: level,
-        rowname: name,
-        rowdescription: description,
-      };
-      setSpells((spells) => [...spells, newSpell]);
-    }
+    const rowNumber = spells.length > 0 ? spells[spells.length - 1].rowNumber + 1 : 1;
+
+    const newSpell = {
+      rowNumber,
+      rowLevel: level,
+      rowName: name,
+      rowDescription: description,
+    };
+
+    setSpells((previousSpells) => [...previousSpells, newSpell]);
   };
 
   const deleteSpell = (deleteSpellRowNumber) => {
@@ -58,11 +53,12 @@ function SpellsContainer() {
   };
 
   return (
-    <div className="mt-5 container">
-      <div className="card">
+    <div className="container p-0">
+      <div className="card section-card">
         <div className="card-header">SPELLS</div>
         <div className="card-body">
           <SpellTable spells={spells} deleteSpell={deleteSpell} />
+          <p className="mb-2 text-muted">Click a spell row to remove it.</p>
           <button
             className="btn btn-primary"
             onClick={() => setShowAddSpell(!showAddSpell)}

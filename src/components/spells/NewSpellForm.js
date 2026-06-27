@@ -17,20 +17,20 @@ function NewSpellForm(props) {
   return (
     <div className="mt-5">
       <form>
-        <div className="mb=3">
-          <label className="form-control">Level</label>
+        <div className="mb-3">
+          <label className="field-label">Level</label>
           <input
             type="text"
-            className="form-control"
+            className="form-control sheet-input"
             required
             onChange={(e) => setLevel(e.target.value)}
             value={level}
           ></input>
         </div>
         <div className="mb-3">
-          <label className="form-control">Name</label>
+          <label className="field-label">Name</label>
           <textarea
-            className="form-control"
+            className="form-control sheet-input"
             rows={3}
             required
             onChange={(e) => setName(e.target.value)}
@@ -38,9 +38,9 @@ function NewSpellForm(props) {
           ></textarea>
         </div>
         <div className="mb-3">
-          <label className="form-control">Description</label>
+          <label className="field-label">Description</label>
           <textarea
-            className="form-control"
+            className="form-control sheet-input"
             rows={3}
             required
             onChange={(e) => setDescription(e.target.value)}
