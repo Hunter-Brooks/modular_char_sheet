@@ -29,7 +29,9 @@ function FeatTable(props) {
           </tbody>
         </table>
       ) : (
-        <p className="text-muted">No {props.type.toLowerCase()} feats added yet.</p>
+        <p className="text-muted">
+          No {props.type.toLowerCase()} feats added yet.
+        </p>
       )}
     </div>
   );
