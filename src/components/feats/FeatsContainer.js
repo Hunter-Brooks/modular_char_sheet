@@ -5,10 +5,8 @@ import Col from "react-bootstrap/Col";
 import NewFeatForm from "./NewFeatForm";
 import FeatTable from "./FeatTable";
 
-function FeatsContainer() {
+function FeatsContainer({ feats, onFeatsChange }) {
   const [showAddFeat, setShowAddFeat] = useState(false);
-
-  const [feats, setFeats] = useState([]);
 
   const addFeat = (level, type, name, description) => {
     const rowNumber =
@@ -22,14 +20,14 @@ function FeatsContainer() {
       rowDescription: description,
     };
 
-    setFeats((previousFeats) => [...previousFeats, newFeat]);
+    onFeatsChange([...feats, newFeat]);
   };
 
   const deleteFeat = (deleteFeatRowNumber) => {
     let filtered = feats.filter(function (value) {
       return value.rowNumber !== deleteFeatRowNumber;
     });
-    setFeats(filtered);
+    onFeatsChange(filtered);
   };
 
   const leftColumnTypes = ["Ancestry", "Skill", "General"];

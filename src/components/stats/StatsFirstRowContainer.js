@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -10,17 +10,7 @@ import Perception from "./Perception";
 import SavingThrows from "./SavingThrows";
 import { getAbilityModifier } from "../../utils/pf2eMath";
 
-function StatsFirstRowContainer() {
-  const [level, setLevel] = useState(1);
-  const [abilities, setAbilities] = useState({
-    strength: 10,
-    dexterity: 10,
-    constitution: 10,
-    intellect: 10,
-    wisdom: 10,
-    charisma: 10,
-  });
-
+function StatsFirstRowContainer({ level, abilities, onLevelChange, onAbilityChange }) {
   const abilityModifiers = useMemo(
     () => ({
       strength: getAbilityModifier(abilities.strength),
@@ -32,13 +22,6 @@ function StatsFirstRowContainer() {
     }),
     [abilities],
   );
-
-  const handleAbilityChange = (abilityName, abilityScore) => {
-    setAbilities((previous) => ({
-      ...previous,
-      [abilityName]: abilityScore,
-    }));
-  };
 
   return (
     <div>
@@ -55,7 +38,7 @@ function StatsFirstRowContainer() {
                     className="form-control sheet-input"
                     value={level}
                     onChange={(event) =>
-                      setLevel(Number(event.target.value || 1))
+                      onLevelChange(Number(event.target.value || 1))
                     }
                   />
                 </div>
@@ -66,7 +49,7 @@ function StatsFirstRowContainer() {
                 <AbilityScores
                   abilities={abilities}
                   abilityModifiers={abilityModifiers}
-                  onAbilityChange={handleAbilityChange}
+                  onAbilityChange={onAbilityChange}
                 />
                 <ClassDC level={level} abilityModifiers={abilityModifiers} />
               </Col>

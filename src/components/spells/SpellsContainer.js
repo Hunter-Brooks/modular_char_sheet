@@ -2,35 +2,8 @@ import React, { useState } from "react";
 import NewSpellForm from "./NewSpellForm";
 import SpellTable from "./SpellTable";
 
-function SpellsContainer() {
+function SpellsContainer({ spells, onSpellsChange }) {
   const [showAddSpell, setShowAddSpell] = useState(false);
-
-  const [spells, setSpells] = useState([
-    {
-      rowNumber: 1,
-      rowLevel: "1",
-      rowName: "Fireball",
-      rowDescription: "asdasdasd",
-    },
-    {
-      rowNumber: 2,
-      rowLevel: "1",
-      rowName: "Message",
-      rowDescription: "asdasdasd",
-    },
-    {
-      rowNumber: 3,
-      rowLevel: "2",
-      rowName: "Fly",
-      rowDescription: "asdasdasd",
-    },
-    {
-      rowNumber: 4,
-      rowLevel: "2",
-      rowName: "Heal",
-      rowDescription: "asdasdasd",
-    },
-  ]);
 
   const addSpell = (level, name, description) => {
     const rowNumber =
@@ -43,14 +16,14 @@ function SpellsContainer() {
       rowDescription: description,
     };
 
-    setSpells((previousSpells) => [...previousSpells, newSpell]);
+    onSpellsChange([...spells, newSpell]);
   };
 
   const deleteSpell = (deleteSpellRowNumber) => {
     let filtered = spells.filter(function (value) {
       return value.rowNumber !== deleteSpellRowNumber;
     });
-    setSpells(filtered);
+    onSpellsChange(filtered);
   };
 
   return (
