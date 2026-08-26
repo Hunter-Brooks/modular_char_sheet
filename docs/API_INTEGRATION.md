@@ -26,6 +26,7 @@ The API client is located at `src/api/characterApi.js` and provides functions fo
 Saves a new character to the backend.
 
 **Parameters:**
+
 ```javascript
 payload = {
   name: "Character Name",
@@ -40,6 +41,7 @@ payload = {
 ```
 
 **Returns:**
+
 ```javascript
 {
   id: "uuid-string",
@@ -51,18 +53,19 @@ payload = {
 ```
 
 **Usage:**
+
 ```javascript
-import { createCharacter } from './api/characterApi';
+import { createCharacter } from "./api/characterApi";
 
 const saveCharacter = async () => {
   try {
     const response = await createCharacter({
       name: sheetData.details.name,
-      characterData: sheetData
+      characterData: sheetData,
     });
-    console.log('Character saved with ID:', response.id);
+    console.log("Character saved with ID:", response.id);
   } catch (error) {
-    console.error('Failed to save character:', error);
+    console.error("Failed to save character:", error);
   }
 };
 ```
@@ -72,9 +75,11 @@ const saveCharacter = async () => {
 Retrieves a character from the backend by ID.
 
 **Parameters:**
+
 - `characterId` (string): UUID of the character to retrieve
 
 **Returns:**
+
 ```javascript
 {
   id: "uuid-string",
@@ -86,15 +91,16 @@ Retrieves a character from the backend by ID.
 ```
 
 **Usage:**
+
 ```javascript
-import { getCharacterById } from './api/characterApi';
+import { getCharacterById } from "./api/characterApi";
 
 const loadCharacter = async (id) => {
   try {
     const character = await getCharacterById(id);
     setSheetData(character.characterData);
   } catch (error) {
-    console.error('Failed to load character:', error);
+    console.error("Failed to load character:", error);
   }
 };
 ```
@@ -104,9 +110,11 @@ const loadCharacter = async (id) => {
 The frontend communicates with these backend endpoints:
 
 ### POST /api/v1/characters
+
 Create a new character
 
 **Request:**
+
 ```json
 {
   "name": "Hunter",
@@ -132,6 +140,7 @@ Create a new character
 ```
 
 **Response:** `201 Created`
+
 ```json
 {
   "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
@@ -143,9 +152,11 @@ Create a new character
 ```
 
 ### GET /api/v1/characters/{id}
+
 Retrieve a character by ID
 
 **Response:** `200 OK`
+
 ```json
 {
   "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
@@ -165,9 +176,9 @@ try {
   const response = await createCharacter(payload);
   // Handle success
 } catch (error) {
-  if (error.message === 'Failed to save character') {
+  if (error.message === "Failed to save character") {
     // Show user-friendly error message
-    alert('Unable to save character. Please check your connection.');
+    alert("Unable to save character. Please check your connection.");
   }
 }
 ```
@@ -212,18 +223,21 @@ public class CorsConfig implements WebMvcConfigurer {
 ### Running Full Stack
 
 1. **Start PostgreSQL:**
+
    ```bash
    cd character-backend
    docker-compose up -d
    ```
 
 2. **Start Backend:**
+
    ```bash
    cd character-backend
    mvn spring-boot:run
    ```
 
 3. **Start Frontend:**
+
    ```bash
    cd modular-char-sheet
    npm start
@@ -242,7 +256,9 @@ Use the browser console to test API calls:
 // Save current character
 const response = await createCharacter({
   name: "Test Character",
-  characterData: { /* current sheet data */ }
+  characterData: {
+    /* current sheet data */
+  },
 });
 
 // Load character by ID
